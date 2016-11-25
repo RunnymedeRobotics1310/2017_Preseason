@@ -1,5 +1,6 @@
 /bin/
 /.classpath
 /build.xml
+/.project
 /build.properties
 /sysProps.xml
