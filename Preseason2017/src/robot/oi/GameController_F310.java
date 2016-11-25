@@ -18,12 +18,11 @@ public class GameController_F310 extends GameController {
 	public boolean getButton_B()              { return super.joystick.getRawButton(2); }
 	public boolean getButton_X()              { return super.joystick.getRawButton(3); }
 	public boolean getButton_Y()              { return super.joystick.getRawButton(4); }
-	public boolean getButton_Back()           { return super.joystick.getRawButton(8); }
-	public boolean getButton_Start()          { return super.joystick.getRawButton(7); }
+	public boolean getButton_Back()           { return super.joystick.getRawButton(7); }
+	public boolean getButton_Start()          { return super.joystick.getRawButton(8); }
 	public boolean getButton_LeftBumper()     { return super.joystick.getRawButton(5); }
 	public boolean getButton_RightBumper()    { return super.joystick.getRawButton(6); }
 	public boolean getButton_LeftStickPush()  { return super.joystick.getRawButton(9); }
 	public boolean getButton_RightStickPush() { return super.joystick.getRawButton(10); }
 	
-
 }
