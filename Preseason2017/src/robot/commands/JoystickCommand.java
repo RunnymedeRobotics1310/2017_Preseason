@@ -39,7 +39,7 @@ public class JoystickCommand extends Command {
     	double speed = Robot.oi.getSpeed();
     	double turn  = Robot.oi.getTurn();
     	
-    	if (Math.abs(speed) <= 0.03) {
+    	if (Math.abs(turn) > 0.05) {
     		Robot.chassisSubsystem.setMotorSpeed(speed, turn);
     	}
     	else {

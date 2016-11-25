@@ -24,7 +24,7 @@ public class RobotMap {
     public static final double MAX_DRIVE_SPEED = 1800;
     public static final double DRIVE_ENCODER_COUNTS_PER_FT = 300.0;
     
-    public static final double DRIVE_PID_PROPORTIONAL_GAIN = 2.0;
+    public static final double DRIVE_PID_PROPORTIONAL_GAIN = 1.7;
     
     public static final double GYRO_SENSITIVITY = .0011;
     

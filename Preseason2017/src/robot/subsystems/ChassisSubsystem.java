@@ -63,7 +63,9 @@ public class ChassisSubsystem extends Subsystem {
 	public void updateSmartDashboard() {
 		SmartDashboard.putData("Left Encoder", leftEncoder);
 		SmartDashboard.putData("Right Encoder", rightEncoder);
-		SmartDashboard.putNumber("Gyro", gyro.getAngle());
+		SmartDashboard.putData("Gyro", gyro);
+		SmartDashboard.putNumber("Gyro Angle", gyro.getAngle());
+		SmartDashboard.putNumber("Gyro Rate", gyro.getRate());
 	}
 	
 	private double calcPIDValue(double setPoint, double feedback) {
