@@ -22,12 +22,8 @@ public class OI {
 		return driverController.getAxis_LeftX();
 	}
 	
-	public boolean isJoystickMovement() {
-		return
-				   Math.abs(driverController.getAxis_LeftX()) >= .03
-				|| Math.abs(driverController.getAxis_LeftY()) >= .03
-				|| Math.abs(driverController.getAxis_RightX()) >= .03
-				|| Math.abs(driverController.getAxis_RightY()) >= .03;
+	public boolean isJoystickMoved() {
+		return driverController.isJoystickMoved();
 	}
 
 	public void updateSmartDashboard() {

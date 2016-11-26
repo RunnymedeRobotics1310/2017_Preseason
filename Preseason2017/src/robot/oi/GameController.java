@@ -61,18 +61,32 @@ public class GameController {
 	 * @return boolean {@code true} indicating if there is any user action on the controller.
 	 */
 	public boolean isControllerActive() {
+		return isButtonPressed() || isJoystickMoved();
+	}
+	
+	/**
+	 *  Returns true if the user is moving any of the Joysticks on the controller or the triggers
+	 * @return boolean {@code true} indicating if there is any Joystick action on the controller.
+	 */
+	public boolean isJoystickMoved() {
+		return     Math.abs(getAxis_LeftX()) > .1   || Math.abs(getAxis_RightX()) > .1
+				|| Math.abs(getAxis_LeftY()) > .1   || Math.abs(getAxis_RightY()) > .1
+				
+				|| getAxis_LeftTrigger()  > .1 
+				|| getAxis_RightTrigger() > .1;
+	}
+	
+	/**
+	 *  Returns true if the user is pressing any buttons
+	 * @return boolean {@code true} indicating if there is any button pressed on the controller.
+	 */
+	public boolean isButtonPressed() {
 		return     getButton_A()     || getButton_B()      || getButton_X()      || getButton_Y()
 				|| getButton_Cross() || getButton_Circle() || getButton_Square() || getButton_Triangle()
 				
 				|| getButton_Back()          || getButton_Start()  
 				|| getButton_LeftBumper()    || getButton_RightBumper()
 				|| getButton_LeftStickPush() || getButton_RightStickPush()
-				
-				|| getAxis_LeftX() > .1   || getAxis_RightX() > .1
-				|| getAxis_LeftY() > .1   || getAxis_RightY() > .1
-				
-				|| getAxis_LeftTrigger()  > .1 
-				|| getAxis_RightTrigger() > .1
 				
 				|| getPov() >= 0;
 	}

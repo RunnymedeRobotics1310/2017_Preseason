@@ -40,7 +40,7 @@ public class DriveStraightCommand extends Command {
     	if (timeSinceInitialized() > timeout) { return true; }
     	
     	// Look for Joystick movement - and then end
-    	if (Robot.oi.isJoystickMovement()) { return true; }
+    	if (Robot.oi.isJoystickMoved()) { return true; }
     	
     	return Math.abs(Robot.chassisSubsystem.getEncoderDistance()) >= encoderDistance;
     }
