@@ -10,6 +10,10 @@ public class OI {
 	
 	GameController driverController = new GameController_F310(0);
 	
+	public boolean getDriverRumbleStart() {
+		return driverController.getButton_RightBumper();
+	}
+	
 	public double getSpeed() {
 		return driverController.getAxis_RightY();
 	}
@@ -22,8 +26,12 @@ public class OI {
 		return driverController.getAxis_LeftX();
 	}
 	
-	public boolean isJoystickMoved() {
+	public boolean isDriverAction() {
 		return driverController.isJoystickMoved();
+	}
+
+	public void setDriverRumble(double rumble) {
+		driverController.setRumble(rumble);
 	}
 
 	public void updateSmartDashboard() {

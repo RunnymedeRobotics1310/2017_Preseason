@@ -105,9 +105,9 @@ public class GameController {
 		StringBuilder sb = new StringBuilder(128);
 		
 		sb.append("Type(" + joystick.getType() + "," + joystick.getButtonCount() + ")");
-		sb.append((isControllerActive() ? "A " : "  "));
+		sb.append((isControllerActive() ? "A " : "   "));
 		
-		sb.append("Left("  + getAxis_LeftX()  + "," + getAxis_LeftY()  + ")");
+		sb.append("Left("  + getAxis_LeftX()  + "," + getAxis_LeftY()  + ") ");
 		sb.append("Right(" + getAxis_RightX() + "," + getAxis_RightY() + ") ");
 		
 		sb.append("Trigger(" + getAxis_LeftTrigger() + "," + getAxis_RightTrigger() + ") ");

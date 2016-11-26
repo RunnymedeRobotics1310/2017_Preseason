@@ -36,6 +36,9 @@ public class JoystickCommand extends Command {
     				! Robot.oi.getStartDriveStraightCommand();
     	}
     	
+    	if (Robot.oi.getDriverRumbleStart()) { Robot.oi.setDriverRumble(0.8); }
+    	else  								 { Robot.oi.setDriverRumble(0); }
+    	
     	double speed = Robot.oi.getSpeed();
     	double turn  = Robot.oi.getTurn();
     	
