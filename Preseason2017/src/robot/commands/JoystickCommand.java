@@ -36,6 +36,10 @@ public class JoystickCommand extends Command {
     				! Robot.oi.getStartDriveStraightCommand();
     	}
     	
+    	if (Robot.oi.getStartDriveStraightWithGyroCommand()) {
+    		Scheduler.getInstance().add(new DriveStraightWithGyroCommand(12, .5, 10));
+    	}
+    	
     	if (Robot.oi.getDriverRumbleStart()) { Robot.oi.setDriverRumble(0.8); }
     	else  								 { Robot.oi.setDriverRumble(0); }
     	

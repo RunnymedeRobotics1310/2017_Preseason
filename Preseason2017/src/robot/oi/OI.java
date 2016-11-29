@@ -38,5 +38,9 @@ public class OI {
 		SmartDashboard.putString("Driver Controller", 
 				driverController.toString());
 	}
+
+	public boolean getStartDriveStraightWithGyroCommand() {
+		return driverController.getPov() == 0;
+	}
 }
 

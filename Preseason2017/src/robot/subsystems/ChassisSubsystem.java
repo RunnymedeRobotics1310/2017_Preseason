@@ -22,7 +22,12 @@ public class ChassisSubsystem extends Subsystem {
 			new Encoder(RobotMap.RIGHT_ENCODER_A, 
 					RobotMap.RIGHT_ENCODER_B, true);
 	
-	private AnalogGyro gyro = new AnalogGyro(RobotMap.GYRO);
+	private AnalogGyro gyro = new AnalogGyro(RobotMap.GYRO) {
+		@Override
+		public double getAngle() {
+			return -super.getAngle();
+		}
+	};
 	
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
@@ -37,6 +42,11 @@ public class ChassisSubsystem extends Subsystem {
     	rightMotor.set(calcPIDValue(speed, rightEncoder.getRate()));
     }
     
+    public void setMotorSpeeds(double leftSpeed, double rightSpeed) {
+    	leftMotor .set(calcPIDValue(leftSpeed, leftEncoder.getRate()));
+    	rightMotor.set(calcPIDValue(rightSpeed, rightEncoder.getRate()));
+    }
+
     public void setMotorSpeed(double forwardSpeed, double turnSpeed) {
     	if (Math.abs(forwardSpeed) <= 0.03) {
     		leftMotor.set(turnSpeed);
@@ -54,6 +64,10 @@ public class ChassisSubsystem extends Subsystem {
 	public void resetEncoders() {
 		rightEncoder.reset();
 		leftEncoder.reset();
+	}
+	
+	public double getAngle() {
+		return gyro.getAngle() % 360.0;
 	}
 	
 	public double getEncoderDistance() {
